@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 56px; /* Navbar height */
+    left: 0;
+}
+
+main {
+    margin-top: 20px;
+}

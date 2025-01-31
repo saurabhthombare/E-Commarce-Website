@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1 class="mt-4">Admin Dashboard</h1>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h4>Total Sales</h4>
+                    <p id="totalSales">$0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-success text-white">
+                <div class="card-body">
+                    <h4>Orders</h4>
+                    <p id="totalOrders">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-warning text-white">
+                <div class="card-body">
+                    <h4>Users</h4>
+                    <p id="totalUsers">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-danger text-white">
+                <div class="card-body">
+                    <h4>Revenue</h4>
+                    <p id="totalRevenue">$0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="salesChart" class="mt-4"></canvas>
+</div>
