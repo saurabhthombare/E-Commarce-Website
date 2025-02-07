@@ -10,6 +10,11 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<myContext>(options=>options.UseSqlServer(
     builder.Configuration.GetConnectionString("myconnection")));
 
+
+builder.Services.AddSession(Option =>
+{
+Option.IdleTimeout = TimeSpan.FromMinutes(5);
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,10 +30,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseSession();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Admin}/{action=Index}/{id?}");
 
 app.Run();

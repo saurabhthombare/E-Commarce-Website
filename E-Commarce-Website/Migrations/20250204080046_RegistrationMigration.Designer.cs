@@ -3,6 +3,7 @@ using E_Commarce_Website.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Commarce_Website.Migrations
 {
     [DbContext(typeof(myContext))]
-    partial class myContextModelSnapshot : ModelSnapshot
+    [Migration("20250204080046_RegistrationMigration")]
+    partial class RegistrationMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,57 +51,6 @@ namespace E_Commarce_Website.Migrations
                     b.HasKey("admin_id");
 
                     b.ToTable("tbl_admin");
-                });
-
-            modelBuilder.Entity("E_Commarce_Website.Models.Category", b =>
-                {
-                    b.Property<int>("category_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("category_id"));
-
-                    b.Property<string>("category_name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("category_id");
-
-                    b.ToTable("tbl_category");
-                });
-
-            modelBuilder.Entity("E_Commarce_Website.Models.Product", b =>
-                {
-                    b.Property<int>("product_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("product_id"));
-
-                    b.Property<int>("cat_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("product_description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("product_image")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("product_name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("product_price")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("product_id");
-
-                    b.HasIndex("cat_id");
-
-                    b.ToTable("tbl_product");
                 });
 
             modelBuilder.Entity("E_Commarce_Website.Models.Registration", b =>
@@ -148,22 +100,6 @@ namespace E_Commarce_Website.Migrations
                     b.HasKey("cust_id");
 
                     b.ToTable("tbl_Register");
-                });
-
-            modelBuilder.Entity("E_Commarce_Website.Models.Product", b =>
-                {
-                    b.HasOne("E_Commarce_Website.Models.Category", "Category")
-                        .WithMany("Product")
-                        .HasForeignKey("cat_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("E_Commarce_Website.Models.Category", b =>
-                {
-                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }

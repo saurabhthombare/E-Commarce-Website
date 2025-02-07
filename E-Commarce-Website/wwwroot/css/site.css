@@ -1,14 +1,62 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
 }
 
+/* Sidebar */
 .sidebar {
     height: 100vh;
+    background-color: #343a40; /* Dark sidebar */
+    color: white;
     position: fixed;
-    top: 56px; /* Navbar height */
     left: 0;
+    top: 56px; /* Adjust if navbar height changes */
+    width: 250px;
+    padding-top: 20px;
 }
 
-main {
+    .sidebar .nav-link {
+        color: #ffffff;
+        padding: 10px 15px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+        .sidebar .nav-link i {
+            font-size: 18px;
+        }
+
+        .sidebar .nav-link:hover {
+            background-color: #495057;
+            border-radius: 5px;
+        }
+
+        .sidebar .nav-link.active {
+            background-color: #007bff;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+/* Main Content */
+.content {
+    margin-left: 260px; /* Adjust according to sidebar width */
     margin-top: 20px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .content {
+        margin-left: 0;
+    }
 }

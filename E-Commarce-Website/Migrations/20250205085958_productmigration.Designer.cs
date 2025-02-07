@@ -3,6 +3,7 @@ using E_Commarce_Website.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Commarce_Website.Migrations
 {
     [DbContext(typeof(myContext))]
-    partial class myContextModelSnapshot : ModelSnapshot
+    [Migration("20250205085958_productmigration")]
+    partial class productmigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,9 +61,8 @@ namespace E_Commarce_Website.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("category_id"));
 
-                    b.Property<string>("category_name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("category_name")
+                        .HasColumnType("int");
 
                     b.HasKey("category_id");
 
@@ -95,8 +97,6 @@ namespace E_Commarce_Website.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("product_id");
-
-                    b.HasIndex("cat_id");
 
                     b.ToTable("tbl_product");
                 });
@@ -148,22 +148,6 @@ namespace E_Commarce_Website.Migrations
                     b.HasKey("cust_id");
 
                     b.ToTable("tbl_Register");
-                });
-
-            modelBuilder.Entity("E_Commarce_Website.Models.Product", b =>
-                {
-                    b.HasOne("E_Commarce_Website.Models.Category", "Category")
-                        .WithMany("Product")
-                        .HasForeignKey("cat_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("E_Commarce_Website.Models.Category", b =>
-                {
-                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }

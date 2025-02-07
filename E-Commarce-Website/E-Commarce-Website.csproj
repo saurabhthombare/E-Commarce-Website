@@ -5,12 +5,19 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>E_Commarce_Website</RootNamespace>
+    <BaseOutputPath>C:\Users\Saurabh\OneDrive\Desktop\project\E-Commarce-Website\E-Commarce-Website\bin\Debug\net8.0</BaseOutputPath>
   </PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Session" Version="2.3.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1"></PackageReference>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.1"></PackageReference>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.sqlServer" Version="9.0.1"></PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\product_image\" />
 	</ItemGroup>
 		
 	
