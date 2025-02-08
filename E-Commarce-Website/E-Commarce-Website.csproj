@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>E_Commarce_Website</RootNamespace>
-    <BaseOutputPath>C:\Users\Saurabh\OneDrive\Desktop\project\E-Commarce-Website\E-Commarce-Website\bin\Debug\net8.0</BaseOutputPath>
+    <BaseOutputPath>C:\Users\Lenovo\OneDrive\Desktop\project2\E-Commarce-Website\E-Commarce-Website\E-Commarce-Website\bin\Debug\net8.0</BaseOutputPath>
   </PropertyGroup>
 
 	<ItemGroup>
