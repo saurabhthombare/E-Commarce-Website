@@ -2,10 +2,13 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
+
+
+
 }
 
-/* Sidebar */
-.sidebar {
+    /* Sidebar */
+    .sidebar {
     height: 100vh;
     background-color: #343a40; /* Dark sidebar */
     color: white;
@@ -46,6 +49,8 @@ body {
     margin-top: 20px;
     padding: 20px;
     transition: margin-left 0.3s;
+    
+    
 }
 
 /* Responsive Fixes */
@@ -60,3 +65,5 @@ body {
         margin-left: 0;
     }
 }
+
+

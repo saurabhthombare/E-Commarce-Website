@@ -1,0 +1,133 @@
+body {
+    font-family: sans-serif;
+    margin: 0%;
+  }
+
+
+.nav {
+    position: fixed;
+    z-index: 30;
+    background-color: white;
+    justify-content: start;
+  
+    height: 6%;
+    width: 100%;
+    align-items: center;
+    
+    
+  }
+  
+  .menu ul {
+
+    position: absolute;
+    display: flex;
+    width: 40%;
+    left: 9%;
+     top: -30%;
+  }
+  
+  .menu ul li {
+    display: flex;
+    padding: 2%;
+  }
+  
+  .menu ul li a {
+    text-align: center;
+    color: #26547d;
+    text-decoration: none;
+    font-size: small;
+    font-weight: bold;
+  }
+  
+  .menu ul li a:hover {
+    border-bottom: 2px solid #26547d;
+    border-radius: 0%;
+  }
+  
+  .logo {
+    display: flex;
+  }
+  
+  .logo a img {
+    display: flex;
+    width: 15%;
+    margin-top: -4.5%;
+  }
+  .ban1{
+    position: relative;
+    display: flex;
+    height: 170px;
+    width: 100%;
+    background-color: orange;
+    
+  }
+  .ban1 p{
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 18%;
+    font-size: xx-large;
+    font-weight: bolder;
+  }
+  .info{
+    position: absolute;
+    left: 10%;
+    margin-top: 10%;
+    display: flex;
+    width: 80%;
+    height: 800px;
+    border: 2px solid black;
+    background-color: rgb(249, 249, 249);
+  }
+  .buy{
+    position: absolute;
+    left: 45%;
+    top: 2%;
+    background-color: #26547d;
+    color: white;
+    border-radius: 10px;
+    padding: 0px 4px;
+  }
+  .info-form{
+    position: absolute;
+    left: 8%;
+    top: 17%;
+  }
+
+  #addname{
+    width: 200px;
+    height: 25px;
+    margin-left: 3%;
+  }
+  .pro-img{
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    border: 2px solid black;
+    right: 10%;
+    top: 16%;
+    background-color: white;
+    border-radius: 15px;
+  }
+  .pro-img img{
+    position: relative;
+    height: 320px;
+    width: 200px;
+    right: -21%;
+    top: 5%;
+
+  }
+  .ord-now{
+    position: absolute;
+    left: 15%;
+    bottom: 35%;
+    background-color: #26547d;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+  }
+  .ord-now a{
+    color: white;
+    text-decoration: none;
+  }

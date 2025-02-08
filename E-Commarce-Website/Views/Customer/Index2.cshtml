@@ -1,0 +1,382 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+    <link rel="stylesheet" href="~/website/css/style1.css">
+</head>
+<body>
+
+    <div class="productview">
+
+
+
+        <div class="nav">
+            <div class="logo"><a href="index.html"><img src="~/website/images/mobmate.png" alt=""></a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="" @Url.Action("index", "Customer")">Home</a></li>
+                    <li><a href="@Url.Action("index2","Customer")">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="@Url.Action("Login", "Admin")">Admin Login</a></li>
+
+                    <li>
+                        <i style="margin-top: 0%; margin-left: 2%; padding: 4px; color: #26547d;" class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" style="height: 20px; width: 180px; border-radius: 10px; margin-top: 1%; color: #26547d;">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="banner">
+            <img src="~/website/images/sale-1.jpg" alt="">
+        </div>
+
+
+        <div class="chargers">
+
+            <div class="pname">
+                <p>Mobile Chargers</p>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href=""><img src="~/website/images/c1.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>Anker 65W PIQ 3.0 Type-C Charger, PowerPort III 65W, with US/UK/EU Plugs for Travel, for iPhone</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/c2.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>Razer USB-C 130W GaN Charger Portable Powerhouse: Small and Mighty - Charge Up-to-4 Devices</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/c3.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>Skullcandy Fix Rapid USB-A and C Charger Block / USB-A and USB-C Port Charging Plug / Charge your phone</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/c4.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>Belkin 40W Dual Port USB C Wall Charger - USB Type C Charger Fast Charging for iPhone</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/c5.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>Mobile Charger with multiple cables 2A high watt adapter easily usable for iphone and samsung</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="cables">
+
+            <div class="pname">
+                <p>Charging Cables</p>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href=""><img src="~/website/images/cc1.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>Basics Nylon USB-A to Lightning Cable Cord, MFi Certified Charger for Apple iPhone 14 13 12 11 X Xs Pro, Pro Max, Plus</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/cc2.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>USB C to USB C Cable, INIU 100W [2-Pack 6.6ft] PD 5A Fast Charging Type C to Type C Cable  Nylon Braided USB-C</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/cc3.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>Ghostek NRGline USB Type C Cable 3FT with Ultra Fast Charging and Super Tough Nylon Braided Cord</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/cc4.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>TALK WORKS Fast-Charge Lightning Cable - MFi-Certified for Apple iPhone 11,12,13 pro max and macbook</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>Lightning Cable, Snugg - Multi iPhone Charger [MFi Certified] Nylon Braided USB Cord for iPad / iPod/ iPhone</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="headphones">
+
+            <div class="pname">
+                <p>Headphones</p>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href=""><img src="~/website/images/h1.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>Beats Solo3 Wireless On-Ear Headphones - Apple W1 Headphone Chip, Class 1 Bluetooth, 40 Hours of Listening Time</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/h2.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>Bang & Olufsen Beoplay EX - Wireless Bluetooth Earphones with Microphone, Waterproof, 20 Hours of Playtime</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/h3.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>TV Ears Additional Wireless Headset, Replacement headset for TV Ears Original, TV Ears Digital</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/h4.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>PHILIPS H4205 On-Ear Wireless Headphones with 32mm Drivers and BASS Boost on-Demand, Blue amazing</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/h5.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>Aiwa Bone Conducting Wireless Headphones-Open-Ear Wireless BT 5.0 Headphones, 6 Hours Playtime</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="mobiles">
+
+            <div class="pname">
+                <p>Top Mobiles</p>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href=""><img src="~/website/images/m1.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>Apple iPhone 14 Pro Max - Deep Purple 256GB With 1-year warranty and PTA approved</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/m2.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>SAMSUNG Galaxy S23 Ultra Cell Phone, Factory Unlocked Android Smartphone, 256GB Storage</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/m3.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>OnePlus 11 5G | 8GB RAM+128GB | Titan Black | US Factory Unlocked Android Smartphone | 5000 mAh battery </p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>Samsung Galaxy Note 20 5G Factory Unlocked Android Cell Phone, US Version, 128GB of Storage</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="all">
+                <div class="imagebox">
+                    <a href="" class="imglist"><img src="~/website/images/m5.png" alt=""></a>
+                </div>
+                <div class="textbox">
+                    <a href="">
+                        <p>SAMSUNG Galaxy Z Flip 4 Cell Phone, Android Smartphone, 256GB, Flex Mode, Hands Free Camera, Foldable Design</p>
+                    </a>
+                </div>
+                <div id="buynow" style="background-color: #26547d; display: flex; margin-left: 35%; margin-top: 10%; width: 30%;  border-radius: 20px; padding: 2px 6px; ">
+                    <a style="text-decoration: none; color: white; font-size: smaller;" href="">Buy Now</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>
