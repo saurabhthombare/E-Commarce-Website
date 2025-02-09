@@ -1,6 +1,11 @@
 ﻿using E_Commarce_Website.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using BCrypt.Net;
 
 namespace E_Commarce_Website.Controllers
 {
@@ -13,55 +18,90 @@ namespace E_Commarce_Website.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         public IActionResult Registration()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Registration(Registration model)
+        public async Task<IActionResult> Registration(Registration model)
         {
             if (ModelState.IsValid)
             {
-                // Ensure that _context.tbl_Register is correctly named in DbContext
+                var existingUser = await _context.tbl_Register.FirstOrDefaultAsync(u => u.cust_email == model.cust_email);
+                if (existingUser != null)
+                {
+                    ModelState.AddModelError("", "Email already exists! Please use a different email.");
+                    return View(model);
+                }
+
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(model.cust_Password);
+
                 var account = new Registration
                 {
                     cust_name = model.cust_name,
                     cust_phone = model.cust_phone,
                     cust_email = model.cust_email,
-                    cust_Password = model.cust_Password,
+                    cust_Password = hashedPassword,
                     cust_country = model.cust_country,
                     cust_city = model.cust_city,
                     cust_address = model.cust_address,
                     cust_gender = model.cust_gender,
-                    cust_image = model.cust_image
                 };
 
                 try
                 {
-                    _context.tbl_Register.Add(account); // Check if this matches your DbContext
-                    _context.SaveChanges(); // Save to the database
+                    _context.tbl_Register.Add(account);
+                    await _context.SaveChangesAsync();
 
                     TempData["SuccessMessage"] = $"{account.cust_name} registered successfully!";
-
-                    return RedirectToAction("Index"); // Redirect after successful registration
+                    return RedirectToAction("Login");
                 }
-                catch (DbUpdateException ex)
+                catch
                 {
-                    // Log the error for debugging
-                    Console.WriteLine($"Database Error: {ex.Message}");
-
-                    ModelState.AddModelError("", "Please enter a unique Email or Password.");
-                    return View(model);
+                    ModelState.AddModelError("", "Error saving data. Please try again.");
                 }
             }
 
-            return RedirectToAction("Login","Admin");
+            return View(model);
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(string email, string password)
+        {
+            var user = await _context.tbl_Register.FirstOrDefaultAsync(u => u.cust_email == email);
+
+            if (user != null && BCrypt.Net.BCrypt.Verify(password, user.cust_Password))
+            {
+                var claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, user.cust_name),
+            new Claim(ClaimTypes.Email, user.cust_email)
+        };
+
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var principal = new ClaimsPrincipal(identity);
+
+                // Ensure authentication scheme is correct
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+                return RedirectToAction("Index", "Customer");
+            }
+
+            ViewBag.ErrorMessage = "Invalid email or password!";
+            return View();
+        }
+
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("index","Customer");
         }
     }
 }

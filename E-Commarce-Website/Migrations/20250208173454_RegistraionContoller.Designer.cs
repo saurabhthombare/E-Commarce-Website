@@ -3,6 +3,7 @@ using E_Commarce_Website.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_Commarce_Website.Migrations
 {
     [DbContext(typeof(myContext))]
-    partial class myContextModelSnapshot : ModelSnapshot
+    [Migration("20250208173454_RegistraionContoller")]
+    partial class RegistraionContoller
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -133,6 +136,10 @@ namespace E_Commarce_Website.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("cust_image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("cust_name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -143,7 +150,7 @@ namespace E_Commarce_Website.Migrations
 
                     b.HasKey("cust_id");
 
-                    b.ToTable("tbl_Register", (string)null);
+                    b.ToTable("tbl_Register");
                 });
 
             modelBuilder.Entity("E_Commarce_Website.Models.Product", b =>
