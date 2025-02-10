@@ -26,8 +26,9 @@
                     <ul>
                         <li><a href="" @Url.Action("index", "Customer")">Home</a></li>
                         <li><a href="@Url.Action("index2","Customer")  ">Products</a></li>
-                        <li><a href="cart.html">Cart</a></li>
+                       @*  <li><a href="cart.html">Cart</a></li> *@
                         <li><a href="@Url.Action("Login","Admin")">Admin Login</a></li>
+                        <li><a href="@Url.Action("Login", "Register")">user login</a></li>
                         
                             <i style="margin-top: 0%; margin-left: 2%; padding: 4px; color: #26547d;" class="fa-solid fa-magnifying-glass"></i>
                             <input type="search" style="height: 20px; border-radius: 10px; margin-top: 1%; color: #26547d;">
